@@ -16,10 +16,9 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-		<link rel="stylesheet" href="css/chartist.min.css">
-
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/chartist.min.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -38,6 +37,22 @@
 			section img.trans-img {
 				background: none;
 				border: none;
+			}
+
+			ul.references {
+				font-size: 0.6em;
+				list-style: none;
+				text-align: left;
+			}
+			.references li {
+				margin-bottom: 15px;
+			}
+			/* Hide fragment image after shown */
+			.hide.fragment.visible:not(.current-fragment) {
+			    display: none;
+			    height:0px;
+			    line-height: 0px;
+			    font-size: 0px;
 			}
 			.node {
 			  stroke: #fff;
@@ -64,6 +79,7 @@
 			    color: #fff;
 			    font-size: 14px;
 			}
+
 			.ct-chart .ct-grid {
 			    stroke: rgba(255, 255, 255, .35);
 			}
@@ -96,7 +112,7 @@
 					<h2>Who am I?</h2>
 					<ul>
 						<li>MASc Student at the University of Ontario Institute of Technology.</li>
-						<li>Background in Software Engineering; industry experience in backend development, HPC, Machine Learning, mobile, and web development.</li>
+						<li>Industry experience in backend development, HPC, Machine Learning, mobile, and web development.</li>
 						<li>Bitcoin enthusiast since reading the initial Bitcoin paper!</li>
 						<li>Email: <a href="mailto:jonathan.gillett@uoit.net">jonathan.gillett@uoit.net</a></li>
 						<li>GitHub Account: <a href="https://github.com/gnu-user">gnu-user</a></li>
@@ -113,23 +129,23 @@
 						<img class="trans-img fragment" height="250" class="fragment" data-src="images/newsweek.png" alt="Satoshi Nakamoto">
 						<img class="trans-img fragment" height="250" class="fragment" data-src="images/miner.png" alt="Bitcoin Miner">
 						<p>
-							Is it a <span class="fragment highlight-blue">physical currency</span>? Who is <span class="fragment highlight-blue">Satoshi Nakamoto</span>? What are they <span class="fragment highlight-blue">mining</span> anyways? 
+							Is it a physical currency? Who is Satoshi Nakamoto? What are they mining anyways? 
 						</p>
 					</section>
 					<section>
-						<h2>Bitcoin: A peer-to-peer electronic cash system</h2>
+						<h3>Bitcoin: A peer-to-peer electronic cash system</h3>
 						<p>
-							Introduced to the world in 2008 by a paper published under the pseudonym <em>Satoshi Nakamoto</em>, a proof of concept was released to the world a year later.
+							Introduced to the world in 2008 in a paper published under the pseudonym <em>Satoshi Nakamoto</em>, a proof of concept was released to the world a year later.
 						</p>
 						<p>
 							Layperson explanation: <q>&ldquo;A digital currency without any centralized authority or government, where the supply and security are controlled by mathematics.&rdquo;</q>
 					</section>
 					<section>
-						<h2>But What is the Benefit to Me?</h2>
+						<h3>But What is the Benefit to Me?</h3>
 						<ul>
 							<li>Allows you to be in control of your own wealth without relying on a third party (e.g. vault in your own house).</li>
-							<li>Ease of use for transferring funds online (benefit over gold or cash which can be difficult to carry and transact with).</li>
-							<li>Increasing adoption with mainstream services such as: <a href="http://newegg.com/bitcoin">Newegg</a>, <a href="http://www.expedia.com/Checkout/BitcoinTermsAndConditions">Expedia</a>, and 	<a href="http://dell.com/bitcoin">Dell</a>.
+							<li>Ease of use for transferring funds online (benefit over gold or cash which can be difficult to transact with).</li>
+							<li>Increasing mainstream adoption with services such as: <a href="http://newegg.com/bitcoin">Newegg</a>, <a href="http://www.expedia.com/Checkout/BitcoinTermsAndConditions">Expedia</a>, and 	<a href="http://dell.com/bitcoin">Dell</a>.
 						</ul>
 					</section>
 					<section>
@@ -149,20 +165,21 @@
 						<svg width="50%" height="600" class="decentralized"></svg>
 					</section>
 					<section>
-						<h2>Peer-to-Peer (P2P)</h2>
+						<h3>Peer-to-Peer (P2P)</h3>
 						<ul>
 							<li>P2P communications mean that technically any node within the network can communicate or be connected to any other node (e.g. downloading with torrents).</li>
-							<li>In Bitcoin, the actual P2P connections (for performance reasons) is approximately 8 - 16 connections.</li>
-							<li>In P2P there can still be a centralized aspect that is required to drive the network, (e.g. trackers for torrents).</li>
+							<li>In Bitcoin, the actual P2P connections per node (for performance reasons) are approximately 8 - 16.</li>
+							<li>In many P2P networks there is still centralization, which is required to operate the network, (e.g. trackers for torrents).</li>
 						</ul>
 					</section>
 					<section>
-						<h2>Decentralized</h2>
+						<h3>Decentralized</h3>
 						<ul>
-							<li>Decentralized networks are P2P, but nodes are connected to small localized networks, rather than everynode.</li>
-							<li>This is done for performance reasons, and is how the internet is structured.</li>
-							<li>Bitcoin requires no centalized <em>tracker</em> to relay transactions, or catalog data pertaining to the network.</li>
+							<li>Decentralized networks are P2P, but without relying on centalized nodes to operate.</li>
+							<li>Often nodes are connected to smaller localized networks, similar to how the internet is architected.</li>
+							<li>Bitcoin requires no centalized tracker to relay transactions or catalog data pertaining to the network.</li>
 							<li>How is this possible? The blockchain! It makes it possible for a P2P network of untrusted nodes to create a collective trusted data store.</li>
+						</ul>
 					</section>
 				</section>
 
@@ -174,342 +191,276 @@
 					<section>
 						<h2>Mathematically Defined Supply</h2>
 						<ul>
-							<li>In the Bitcoin network, currency (BTC) can only be minted as a reward to miners for processing transactions.</li>
+							<li>The currency (BTC) can only be minted as a reward to miners for processing transactions.</li>
 							<li>A mathematical function precisely describes the controlled supply made available.</li>
 							<li>At any point in time the supply of BTC can be precisely calculated based on this function.</li>
 						</ul>
 					</section>
-					<section data-state="supply-slide">
-						<div class="ct-chart"></div>
-						<p>$ \frac{\
-\displaystyle\sum_{i=0}^{32} 21000 \big[ \frac{50.10^{8}}{2^i} \big]}{10^{8}} $
-					<section>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+					<section id="supply-slide" data-state="supply-slide">
+						<div id="supply-chart" class="ct-chart"></div>
+						<p>The current supply of Bitcoin is <span class="fragment highlight-red">15,581,350</span>, with a total supply of <span class="fragment highlight-red">21,000,000</span> defined by the following function.</p>
+						<p>$ \frac{\displaystyle\sum_{i=0}^{32} 21000 \big[ \frac{50.10^{8}}{2^i} \big]}{10^{8}} $</p>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment fade-up">fade-up (also down, left and right!)</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
+						<p>The initial reward to miners was <span class="fragment highlight-red">50 BTC</span>, with the reward halving every <span class="fragment highlight-red">210,000</span> blocks.</p>
+						<table>
 						<thead>
 							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
+								<th>Block</th>
+								<th>Reward</th>
+								<th>Supply Increase</th>
+								<th>% of Supply</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
+								<td>0</td>
+								<td>50.0</td>
+								<td>10,500,000</td>
+								<td>50.0%</td>
 							</tr>
 							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
+								<td>210,000</td>
+								<td>25.0</td>
+								<td>15,750,000</td>
+								<td>75.0%</td>
 							</tr>
 							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
+								<td>420,000</td>
+								<td>12.5</td>
+								<td>18,375,000</td>
+								<td>87.5%</td>
+							</tr>
+							<tr>
+								<td>630,000</td>
+								<td>6.25</td>
+								<td>19,687,500</td>
+								<td>93.75%</td>
+							</tr>
+							<tr>
+								<td>840,000</td>
+								<td>3.125</td>
+								<td>19,687,500</td>
+								<td>96.875%</td>
+							</tr>
+							<tr>
+								<td>1,050,000</td>
+								<td>1.5625</td>
+								<td>20,343,750</td>
+								<td>98.4375%</td>
+							</tr>
+							<tr>
+								<td>...</td>
+								<td>...</td>
+								<td>...</td>
+								<td>...</td>
+							</tr>
+							<tr>
+								<td>6,930,000</td>
+								<td>0.0</td>
+								<td>21,000,000</td>
+								<td>100.0%</td>
 							</tr>
 						</tbody>
 					</table>
+					</section>
 				</section>
 
+
+
+
+				<!-- CRYPTOGRAPHY -->
 				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
+					<section>
+						<h2>Cryptography</h2>
+						<ul>
+							<li><span class="fragment highlight-blue">Public key</span> cryptography (elliptic curves).</li>
+							<li>Elliptic Curve <span class="fragment highlight-blue">Digital Signature Algorithm</span> (ECDSA).</li>
+							<li><span class="fragment highlight-blue">Hash function</span> (SHA256).</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Public Key Cryptography</h3>
+						<ul>
+							<li>Anyone can encrypt and send data to a recipient using the recipient's <span class="fragment highlight-blue">public key</span>, and can only be decrypted by the recipient using their <span class="fragment highlight-blue">private key</span> (which is not shared).</li>
+							<li>In Bitcoin, the public key is encoded as your <span class="fragment highlight-blue">address</span>, which anyone in the network can use to send you Bitcoin.</li>
+							<!--
+							<li>For readability the public key is encoded into an address <span class="fragment highlight-blue">1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX</span></li>-->
+						</ul>
+					</section>
+					<section>
+						<h3>Digital Signature Algorithm (DSA)</h3>
+						<ul>
+							<li>DSA makes use of public and private keys to sign data.</li>
+							<li>If the data is altered the signature will be invalidated</li>
+							<li>ECDSA is used for transactions, BTC is sent from one user to another by creating a <span class="fragment highlight-blue">transaction</span> where the amount and recipient's address are provided, the user sending the Bitcoin then signs the transaction using their <span class="fragment highlight-blue">private</span> and <span class="fragment highlight-blue">public</span> keys.</li>
+							<!--
+							<li>The BTC can only be transferred fom sender to recipient if the sender's transaction <span class="fragment highlight-blue">signature is valid</span>.</li>-->
+						</ul>
+					</section>
+					<section>
+						<h3>Hash function</h3>
+						<ul>
+							<li>Hash functions are used to map input data to a specified set of outputs, for example mapping all words to integers from $0\ldots100$.</li>
+							<li>Cryptographic hash functions SHA256 and RIPEMD160 are used in Bitcoin for many applications, including reducing the characters generated when encoding an addresses.</li>
+							<li>SHA256 maps any input to an output that is a fixed size of <span class="fragment highlight-blue">256 bits</span>, with a total of $2^{256} = 1.15792...\times10^{77}$ possible outputs.</li>
+						</ul>
+					</section>
 				</section>
 
+
+
+
+				<!-- BLOCKCHAIN -->
 				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
+					<h2>Blockchain</h2>
 					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
+						<li>The public ledger of all Bitcoin transactions, it is made up of <span class="fragment highlight-blue">blocks</span>, with each new block added to the <span class="fragment highlight-blue">chain</span> dependent on all of the previous blocks.</li>
+						<li>Any attempt to alter the past events recorded on the blockchain, would invalidate any proceeding blocks.</li>
+						<li>The blocks are the collection of all transactions that occurred on the network that have not yet been added to the blockchain.</li>
+						<li>Blocks are added to the blockchain and made secure through a process called <span class="fragment highlight-blue">mining.</span></li> 
 					</ul>
 				</section>
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
+
+
+				<!-- MINING -->
+				<section>
+					<section>
+						<h2>Mining</h2>
+						<ul>
+							<li>Mining is the process in which a new block (collection of transactions) are validated and added to the blockchain.</li>
+							<li>The first miner to add a new block is rewarded with Bitcoin, the only way currency is minted.</li>
+							<li>But how can the mining process be made fair and gamified, why would anyone bother mining?</li>
+							<li class="fragment fade-up"><span style="color: #1b91ff;">SHA256</span> <span class="fragment fade-up">It adds a computational weight to the mining process and makes it provably fair.</span></li>
+							<li class="fragment fade-up">For example, if there are only two miners, and one has <strong>10x</strong> the computational power of the other, they can expect to earn <strong>10x</strong> more Bitcoin.</li></span>
+						</ul>
+					</section>
+					<section>
+						<h3>SHA256 Hashing</h3>
+						<ul>
+							<li>SHA256 is used to ensure that on average it takes all miners approximately 10 minutes to solve a new block.</li>
+							<li>For a block to be accepted by the network, miners must find a <span class="fragment highlight-blue">nonce</span>, which is included in the block, in order to generate a hash that has a specified number of leading bits that are 0.</li>
+							<li>The number of leading bits is the <span class="fragment highlight-blue">difficulty.</span></li>
+							<li>The block can be validated by checking that the nonce produces a hash that meets the difficulty.</li>
+							<p class="fragment fade-up">$\text{SHA256}(\text{SHA256}(B)) = (0^{\ell} || {\{0, 1\}}^{256-\ell})$</p>
+						</ul>
+					</section>
 				</section>
 
+
+
+				<section>
+					<section>
+						<h2>Impact on Global Finance</h2>
+						<p class="hide fragment current-visible">Bitcoin is a <span class="fragment highlight-blue">disruptive</span> financial technology, the concept and technology have unleashed a revolution that shows no signs of slowing down.</p>
+						<img class="hide fragment current-visible" height="550" data-src="images/bitcoin-2013.png" alt="2013: Year Of The Bitcoin">
+						<img class="hide fragment current-visible" height="550" data-src="images/mtgox.png" alt="Mt. Gox Files for Bankruptcy; Nearly $500M of Bitcoins Lost">
+						<img class="hide fragment current-visible" height="550" data-src="images/silkroad.png" alt="U.S. holds final auction of bitcoins from Silk Road case">
+						<img class="hide fragment current-visible" height="550" data-src="images/bitcoin-to-blockchain.png" alt="Banks, tech companies move on from bitcoin to blockchain">
+						</ul>
+					</section>
+					<section>
+						<h3>How Much Volume?</h3>
+						<ul>
+							<li>It's just a cryptocurrency... a fad... how much daily volume (USD) could it possibly have?</li>
+							<li class="fragment fade-up">
+								<span class="fragment fade-up">1 Million?</span> <span class="fragment fade-up">5 Million?</span> <span class="fragment fade-up">10 Million?!</span>
+							</li>
+							<li class="fragment fade-up"><span style="color: #1b91ff;"><strong>325 Million USD!</strong></span> (based on the historical price since 2013).</li>
+							<li class="fragment fade-up">That's based on daily blockchain transactions, what about off the blockchain, such as on exchanges?</li>
+							<li class="fragment fade-up">A conservative estimate of the daily trading volume on all major exchanges (EUR, CNY, USD) since 2013, based on our research, is <span class="fragment highlight-blue"><strong>55 Million USD!</strong></span></li>
+						</ul>
+					</section>
+				</section>
+
+
+
+
+
+				<!-- BIT INDEX -->
+				<section>
+					<section>
+						<h2>How do we Measure Bitcoin?</h2>
+						<ul>
+							<li><span class="fragment highlight-blue">Bit-index</span>, a metric that tries to better explain and measure the activity of the Bitcoin network.</li>
+							<li>Takes into account the historical activity of users and accurately represents their current influence in the network while also accounting for the drastic increase in the value of Bitcoin.</li>
+							<li>Metric is inspired by the widely used <span class="fragment highlight-blue">h-index</span>, a metric for the impact of authors based on their publications.</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Bit-index</h3>
+						<pre><code class="python hljs" data-trim>
+def bit-index(measures):
+    sorted = measures.sort(reverse=True)
+    for idx, measure in enumerate(sorted):
+        if idx+1 >= measure:
+            return measure
+						</code></pre>
+						<ul>
+							<li>The measurements are <span class="fragment highlight-blue">sorted</span> in descending order.</li>
+							<li>The bit-index is the last measurement that is<span class="fragment highlight-blue"> greater than or equal</span> to the current position in the list.</li>
+							<li>What should be used as a measurement? What is the best way to measure the activity on the network? <span class="fragment highlight-blue">Balance?</span> <span class="fragment highlight-blue">Volume?</span> <span class="fragment highlight-blue">Number of transactions?</span></li>
+						</ul>
+					</section>
+
+
+					<section id="bitindex-slide" data-state="bitindex-slide">
+						<div style="float: left;" id="balance" class="ct-chart"></div>
+						<div id="volume" class="ct-chart"></div>
+						<ul>
+							<li>Orange line is the partition, intersection is the <span class="fragment highlight-blue">bit-index</span>.</li>
+							<li>Left figure is calculated based on <span class="fragment highlight-blue">balance</span>, right using the amount of <span class="fragment highlight-blue">volume sent.</span></li>
+							<li>Balance accounts poorly for speculative hoarding, but volume is also susceptible to outliers and noise.</li>
+							<li>In both cases the users became inactive over time, which bit-index is more representative?</li>
+						</ul>
+					</section>
+
+
+					<section>
+						<h3>Bit-index Calculation</h3>
+						<ul>
+							<li>There are hundreds of millions of transactions.</li>
+							<li>We store the blockchain in a relational database > 1 TB.</li>
+							<li>Bit-index calculation for each user is embarassingly parallel to calculate.</li>
+							<li>Calculations done by partitioning query results grouped by each user, mapped to processes using MPI.</li>
+							<li>Ideal scenario, use Hadoop with BigData database (Hive), use MapReduce to easily parallelize the calculations.</li>
+						</ul>
+					</section>
+				</section>
+
+
+				<section>
+					<h2>Future Work</h2>
+					<ul>
+						<li>More robust bit-index calculation to account for outliers and noise, such as by applying a Kalman filter.</li>
+						<li>Application of features that take into account the graph relationship of transactions between users.</li>
+						<li>Addition of weighting features to measurements to make the metric more accurate.</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h2>References</h2>
+					<ul class="references">
+						<li>Satoshi Nakamoto. Bitcoin: A peer-to-peer electronic cash system. <a href="http://nakamotoinstitute.org/bitcoin">http://nakamotoinstitute.org/bitcoin</a>, Oct. 2008. [Online; accessed Mar. 1, 2016].</li>
+						<li>Sarah Meiklejohn, Marjori Pomarole, Grant Jordan, Kirill Levchenko, Damon McCoy, Geoffrey M Voelker, and Stefan Savage. A fistful of bitcoins: characterizing payments among men with no names. In Proceedings of the 2013 conference on Internet measurement conference, pages 127–140. ACM, 2013.</li>
+						<li>Forbes. 2013: Year Of The Bitcoin. <a href="http://www.forbes.com/sites/kitconews/2013/12/10/2013-year-of-the-bitcoin/#6d1109ee2295">http://www.forbes.com/sites/kitconews/2013/12/10/2013-year-of-the-bitcoin/#6d1109ee2295</a>, Dec. 2013. [Online; accessed May 3, 2016].</li>
+						<li>Mt. Gox Files for Bankruptcy; Nearly $500M Of Bitcoins Lost. <a href="http://www.npr.org/blogs/thetwo-way/2014/02/28/283863219/mtgox-files-for-bankruptcy-nearly-500m-of-bitcoins-lost">http://www.npr.org/blogs/thetwo-way/2014/02/28/283863219/mtgox-files-for-bankruptcy-nearly-500m-of-bitcoins-lost</a>, Feb. 2014. [Online; accessed May 4, 2016].</li>
+						<li>Reuters. U.S. holds final auction of bitcoins from Silk Road case. <a href="http://www.reuters.com/article/us-usa-bitcoin-auction-idUSKCN0SU28Q20151105">http://www.reuters.com/article/us-usa-bitcoin-auction-idUSKCN0SU28Q20151105</a>, Nov. 2015. [Online; accessed May 2, 2016].</li>
+						<li>Reuters. Banks, tech companies move on from bitcoin to blockchain. <a href="http://www.reuters.com/article/us-usa-bitcoin-blockchain-idUSKCN0XT23Y">http://www.reuters.com/article/us-usa-bitcoin-blockchain-idUSKCN0XT23Y</a>, May 2016. [Online; accessed May 4, 2016].</li>
+					</ul>
+				</section>
+	
+				<section>
+					<h2>Thank You!</h2>
+					<h2>Questions?</h2>
+				</section>
 			</div>
 
 		</div>
 
+		<script src="js/jquery-1.12.4.min.js"></script>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 		<script src="js/d3.v3.min.js"></script>
@@ -546,425 +497,616 @@ Reveal.addEventListener( 'customevent', function() {
 
 
 		// P2P graphs
-		Reveal.addEventListener('p2p-slide', function() {
-			var graph1 = {
-			  "nodes":[
-			    {"group":1},
-			    {"group":1},
-			    {"group":1},
-			    {"group":1},
-			    {"group":1},
-			    {"group":1},
-			    {"group":1},
-			    {"group":1},
-			    {"group":2},
-			  ],
-			  "links":[
-			    {'source': 0, 'target': 0, 'value': 1},
-				{'source': 0, 'target': 1, 'value': 1},
-				{'source': 0, 'target': 2, 'value': 1},
-				{'source': 0, 'target': 3, 'value': 1},
-				{'source': 0, 'target': 4, 'value': 1},
-				{'source': 0, 'target': 5, 'value': 1},
-				{'source': 0, 'target': 6, 'value': 1},
-				{'source': 0, 'target': 7, 'value': 1},
-				{'source': 0, 'target': 8, 'value': 25},
-				{'source': 1, 'target': 0, 'value': 1},
-				{'source': 1, 'target': 1, 'value': 1},
-				{'source': 1, 'target': 2, 'value': 1},
-				{'source': 1, 'target': 3, 'value': 1},
-				{'source': 1, 'target': 4, 'value': 1},
-				{'source': 1, 'target': 5, 'value': 1},
-				{'source': 1, 'target': 6, 'value': 1},
-				{'source': 1, 'target': 7, 'value': 1},
-				{'source': 1, 'target': 8, 'value': 25},
-				{'source': 2, 'target': 0, 'value': 1},
-				{'source': 2, 'target': 1, 'value': 1},
-				{'source': 2, 'target': 2, 'value': 1},
-				{'source': 2, 'target': 3, 'value': 1},
-				{'source': 2, 'target': 4, 'value': 1},
-				{'source': 2, 'target': 5, 'value': 1},
-				{'source': 2, 'target': 6, 'value': 1},
-				{'source': 2, 'target': 7, 'value': 1},
-				{'source': 2, 'target': 8, 'value': 25},
-				{'source': 3, 'target': 0, 'value': 1},
-				{'source': 3, 'target': 1, 'value': 1},
-				{'source': 3, 'target': 2, 'value': 1},
-				{'source': 3, 'target': 3, 'value': 1},
-				{'source': 3, 'target': 4, 'value': 1},
-				{'source': 3, 'target': 5, 'value': 1},
-				{'source': 3, 'target': 6, 'value': 1},
-				{'source': 3, 'target': 7, 'value': 1},
-				{'source': 3, 'target': 8, 'value': 25},
-				{'source': 4, 'target': 0, 'value': 1},
-				{'source': 4, 'target': 1, 'value': 1},
-				{'source': 4, 'target': 2, 'value': 1},
-				{'source': 4, 'target': 3, 'value': 1},
-				{'source': 4, 'target': 4, 'value': 1},
-				{'source': 4, 'target': 5, 'value': 1},
-				{'source': 4, 'target': 6, 'value': 1},
-				{'source': 4, 'target': 7, 'value': 1},
-				{'source': 4, 'target': 8, 'value': 25},
-				{'source': 5, 'target': 0, 'value': 1},
-				{'source': 5, 'target': 1, 'value': 1},
-				{'source': 5, 'target': 2, 'value': 1},
-				{'source': 5, 'target': 3, 'value': 1},
-				{'source': 5, 'target': 4, 'value': 1},
-				{'source': 5, 'target': 5, 'value': 1},
-				{'source': 5, 'target': 6, 'value': 1},
-				{'source': 5, 'target': 7, 'value': 1},
-				{'source': 5, 'target': 8, 'value': 25},
-				{'source': 6, 'target': 0, 'value': 1},
-				{'source': 6, 'target': 1, 'value': 1},
-				{'source': 6, 'target': 2, 'value': 1},
-				{'source': 6, 'target': 3, 'value': 1},
-				{'source': 6, 'target': 4, 'value': 1},
-				{'source': 6, 'target': 5, 'value': 1},
-				{'source': 6, 'target': 6, 'value': 1},
-				{'source': 6, 'target': 7, 'value': 1},
-				{'source': 6, 'target': 8, 'value': 25},
-				{'source': 7, 'target': 0, 'value': 1},
-				{'source': 7, 'target': 1, 'value': 1},
-				{'source': 7, 'target': 2, 'value': 1},
-				{'source': 7, 'target': 3, 'value': 1},
-				{'source': 7, 'target': 4, 'value': 1},
-				{'source': 7, 'target': 5, 'value': 1},
-				{'source': 7, 'target': 6, 'value': 1},
-				{'source': 7, 'target': 7, 'value': 1},
-				{'source': 7, 'target': 8, 'value': 25}
-			  ]
-			};
-			var graph2 = {
-			  "nodes":[
-			  	// leaf
-			    {"group":0},
-			    {"group":0},
-			    {"group":0},
-			    {"group":0},
-			    {"group":0},
-			    {"group":0},
-			    // leaf
-			    {"group":1},
-			    {"group":1},
-			    {"group":1},
-			    {"group":1},
-			    {"group":1},
-			    // leaf
-			    {"group":2},
-			    {"group":2},
-			    {"group":2},
-			    {"group":2},
-			    {"group":2},
-			    {"group":2},
-			    {"group":2},
-			    {"group":2},
-			    // leaf
-			    {"group":3},
-			    {"group":3},
-			    {"group":3},
-			    // leaf
-			    {"group":4},
-			    {"group":4},
-			    {"group":4},
-			    {"group":4},
-			    // leaf
-			    {"group":5},
-			    {"group":5},
-			    {"group":5},
-			    {"group":5},
-			    {"group":5}
-			  ],
-			  "links":[
-			  	// leaf
-			    {"source":0,"target":5,"value":1},
-			    {"source":1,"target":5,"value":1},
-			    {"source":2,"target":5,"value":1},
-			    {"source":3,"target":5,"value":1},
-			    {"source":4,"target":5,"value":1},
-			    {"source":5,"target":6,"value":25},
-			    // leaf
-			   	{"source":6,"target":10,"value":1},
-			   	{"source":7,"target":10,"value":1},
-			   	{"source":8,"target":10,"value":1},
-			   	{"source":9,"target":10,"value":1},
-			   	{"source":10,"target":11,"value":25},
-			   	// leaf
-			   	{"source":11,"target":18,"value":1},
-			   	{"source":12,"target":18,"value":1},
-			   	{"source":13,"target":18,"value":1},
-			   	{"source":14,"target":18,"value":1},
-			   	{"source":15,"target":18,"value":1},
-			   	{"source":16,"target":18,"value":1},
-			   	{"source":17,"target":18,"value":1},
-			   	{"source":18,"target":19,"value":25},
-			   	// leaf
-			   	{"source":19,"target":21,"value":1},
-			   	{"source":20,"target":21,"value":1},
-			   	{"source":21,"target":22,"value":25},
-			   	// leaf
-			   	{"source":22,"target":25,"value":1},
-			   	{"source":23,"target":25,"value":1},
-			   	{"source":24,"target":25,"value":1},
-				{"source":25,"target":30,"value":25},
-				// leaf
-				{"source":26,"target":30,"value":1},
-			   	{"source":27,"target":30,"value":1},
-			   	{"source":28,"target":30,"value":1},
-				{"source":29,"target":30,"value":1},
-			  ]
-			};
+		$( document ).ready(function() {
+			Reveal.addEventListener('p2p-slide', function() {
+				var graph1 = {
+				  "nodes":[
+				    {"group":1},
+				    {"group":1},
+				    {"group":1},
+				    {"group":1},
+				    {"group":1},
+				    {"group":1},
+				    {"group":1},
+				    {"group":1},
+				    {"group":2},
+				  ],
+				  "links":[
+				    {'source': 0, 'target': 0, 'value': 1},
+					{'source': 0, 'target': 1, 'value': 1},
+					{'source': 0, 'target': 2, 'value': 1},
+					{'source': 0, 'target': 3, 'value': 1},
+					{'source': 0, 'target': 4, 'value': 1},
+					{'source': 0, 'target': 5, 'value': 1},
+					{'source': 0, 'target': 6, 'value': 1},
+					{'source': 0, 'target': 7, 'value': 1},
+					{'source': 0, 'target': 8, 'value': 25},
+					{'source': 1, 'target': 0, 'value': 1},
+					{'source': 1, 'target': 1, 'value': 1},
+					{'source': 1, 'target': 2, 'value': 1},
+					{'source': 1, 'target': 3, 'value': 1},
+					{'source': 1, 'target': 4, 'value': 1},
+					{'source': 1, 'target': 5, 'value': 1},
+					{'source': 1, 'target': 6, 'value': 1},
+					{'source': 1, 'target': 7, 'value': 1},
+					{'source': 1, 'target': 8, 'value': 25},
+					{'source': 2, 'target': 0, 'value': 1},
+					{'source': 2, 'target': 1, 'value': 1},
+					{'source': 2, 'target': 2, 'value': 1},
+					{'source': 2, 'target': 3, 'value': 1},
+					{'source': 2, 'target': 4, 'value': 1},
+					{'source': 2, 'target': 5, 'value': 1},
+					{'source': 2, 'target': 6, 'value': 1},
+					{'source': 2, 'target': 7, 'value': 1},
+					{'source': 2, 'target': 8, 'value': 25},
+					{'source': 3, 'target': 0, 'value': 1},
+					{'source': 3, 'target': 1, 'value': 1},
+					{'source': 3, 'target': 2, 'value': 1},
+					{'source': 3, 'target': 3, 'value': 1},
+					{'source': 3, 'target': 4, 'value': 1},
+					{'source': 3, 'target': 5, 'value': 1},
+					{'source': 3, 'target': 6, 'value': 1},
+					{'source': 3, 'target': 7, 'value': 1},
+					{'source': 3, 'target': 8, 'value': 25},
+					{'source': 4, 'target': 0, 'value': 1},
+					{'source': 4, 'target': 1, 'value': 1},
+					{'source': 4, 'target': 2, 'value': 1},
+					{'source': 4, 'target': 3, 'value': 1},
+					{'source': 4, 'target': 4, 'value': 1},
+					{'source': 4, 'target': 5, 'value': 1},
+					{'source': 4, 'target': 6, 'value': 1},
+					{'source': 4, 'target': 7, 'value': 1},
+					{'source': 4, 'target': 8, 'value': 25},
+					{'source': 5, 'target': 0, 'value': 1},
+					{'source': 5, 'target': 1, 'value': 1},
+					{'source': 5, 'target': 2, 'value': 1},
+					{'source': 5, 'target': 3, 'value': 1},
+					{'source': 5, 'target': 4, 'value': 1},
+					{'source': 5, 'target': 5, 'value': 1},
+					{'source': 5, 'target': 6, 'value': 1},
+					{'source': 5, 'target': 7, 'value': 1},
+					{'source': 5, 'target': 8, 'value': 25},
+					{'source': 6, 'target': 0, 'value': 1},
+					{'source': 6, 'target': 1, 'value': 1},
+					{'source': 6, 'target': 2, 'value': 1},
+					{'source': 6, 'target': 3, 'value': 1},
+					{'source': 6, 'target': 4, 'value': 1},
+					{'source': 6, 'target': 5, 'value': 1},
+					{'source': 6, 'target': 6, 'value': 1},
+					{'source': 6, 'target': 7, 'value': 1},
+					{'source': 6, 'target': 8, 'value': 25},
+					{'source': 7, 'target': 0, 'value': 1},
+					{'source': 7, 'target': 1, 'value': 1},
+					{'source': 7, 'target': 2, 'value': 1},
+					{'source': 7, 'target': 3, 'value': 1},
+					{'source': 7, 'target': 4, 'value': 1},
+					{'source': 7, 'target': 5, 'value': 1},
+					{'source': 7, 'target': 6, 'value': 1},
+					{'source': 7, 'target': 7, 'value': 1},
+					{'source': 7, 'target': 8, 'value': 25}
+				  ]
+				};
+				var graph2 = {
+				  "nodes":[
+				  	// leaf
+				    {"group":0},
+				    {"group":0},
+				    {"group":0},
+				    {"group":0},
+				    {"group":0},
+				    {"group":0},
+				    // leaf
+				    {"group":1},
+				    {"group":1},
+				    {"group":1},
+				    {"group":1},
+				    {"group":1},
+				    // leaf
+				    {"group":2},
+				    {"group":2},
+				    {"group":2},
+				    {"group":2},
+				    {"group":2},
+				    {"group":2},
+				    {"group":2},
+				    {"group":2},
+				    // leaf
+				    {"group":3},
+				    {"group":3},
+				    {"group":3},
+				    // leaf
+				    {"group":4},
+				    {"group":4},
+				    {"group":4},
+				    {"group":4},
+				    // leaf
+				    {"group":5},
+				    {"group":5},
+				    {"group":5},
+				    {"group":5},
+				    {"group":5}
+				  ],
+				  "links":[
+				  	// leaf
+				    {"source":0,"target":5,"value":1},
+				    {"source":1,"target":5,"value":1},
+				    {"source":2,"target":5,"value":1},
+				    {"source":3,"target":5,"value":1},
+				    {"source":4,"target":5,"value":1},
+				    {"source":5,"target":6,"value":25},
+				    // leaf
+				   	{"source":6,"target":10,"value":1},
+				   	{"source":7,"target":10,"value":1},
+				   	{"source":8,"target":10,"value":1},
+				   	{"source":9,"target":10,"value":1},
+				   	{"source":10,"target":11,"value":25},
+				   	// leaf
+				   	{"source":11,"target":18,"value":1},
+				   	{"source":12,"target":18,"value":1},
+				   	{"source":13,"target":18,"value":1},
+				   	{"source":14,"target":18,"value":1},
+				   	{"source":15,"target":18,"value":1},
+				   	{"source":16,"target":18,"value":1},
+				   	{"source":17,"target":18,"value":1},
+				   	{"source":18,"target":19,"value":25},
+				   	// leaf
+				   	{"source":19,"target":21,"value":1},
+				   	{"source":20,"target":21,"value":1},
+				   	{"source":21,"target":22,"value":25},
+				   	// leaf
+				   	{"source":22,"target":25,"value":1},
+				   	{"source":23,"target":25,"value":1},
+				   	{"source":24,"target":25,"value":1},
+					{"source":25,"target":30,"value":25},
+					// leaf
+					{"source":26,"target":30,"value":1},
+				   	{"source":27,"target":30,"value":1},
+				   	{"source":28,"target":30,"value":1},
+					{"source":29,"target":30,"value":1},
+				  ]
+				};
 
-			var width = 500,
-			    height = 600;
+				var width = 500,
+				    height = 600;
 
-			var color = d3.scale.category20();
+				var color = d3.scale.category20();
 
-			var force1 = d3.layout.force()
-			    .charge(-120)
-			    .linkDistance(275)
-			    .size([width, height]);
+				var force1 = d3.layout.force()
+				    .charge(-120)
+				    .linkDistance(275)
+				    .size([width, height]);
 
-			var force2 = d3.layout.force()
-			    .charge(-120)
-			    .linkDistance(75)
-			    .size([width, height]);
+				var force2 = d3.layout.force()
+				    .charge(-120)
+				    .linkDistance(75)
+				    .size([width, height]);
 
-			var svg1 = d3.select(".peer-to-peer")
-			    .attr("width", '50%')
-			    .attr("height", 600);
+				var svg1 = d3.select(".peer-to-peer")
+				    .attr("width", '50%')
+				    .attr("height", 600);
 
-			var svg2 = d3.select(".decentralized")
-			    .attr("width", '50%')
-			    .attr("height", height);
+				var svg2 = d3.select(".decentralized")
+				    .attr("width", '50%')
+				    .attr("height", height);
 
-			  force1
-			      .nodes(graph1.nodes)
-			      .links(graph1.links)
-			      .start();
+				  force1
+				      .nodes(graph1.nodes)
+				      .links(graph1.links)
+				      .start();
 
-			  force2
-			      .nodes(graph2.nodes)
-			      .links(graph2.links)
-			      .start();
+				  force2
+				      .nodes(graph2.nodes)
+				      .links(graph2.links)
+				      .start();
 
-			  var link1 = svg1.selectAll(".link")
-			      .data(graph1.links)
-			    .enter().append("line")
-			      .attr("class", "link")
-			      .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+				  var link1 = svg1.selectAll(".link")
+				      .data(graph1.links)
+				    .enter().append("line")
+				      .attr("class", "link")
+				      .style("stroke-width", function(d) { return Math.sqrt(d.value); });
 
-			  var link2 = svg2.selectAll(".link")
-			      .data(graph2.links)
-			    .enter().append("line")
-			      .attr("class", "link")
-			      .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+				  var link2 = svg2.selectAll(".link")
+				      .data(graph2.links)
+				    .enter().append("line")
+				      .attr("class", "link")
+				      .style("stroke-width", function(d) { return Math.sqrt(d.value); });
 
-			  var node1 = svg1.selectAll(".node")
-			      .data(graph1.nodes)
-			    .enter().append("circle")
-			      .attr("class", "node")
-			      .attr("r", 5)
-			      .style("fill", function(d) { return color(d.group); })
-			      .call(force1.drag);
+				  var node1 = svg1.selectAll(".node")
+				      .data(graph1.nodes)
+				    .enter().append("circle")
+				      .attr("class", "node")
+				      .attr("r", 5)
+				      .style("fill", function(d) { return color(d.group); })
+				      .call(force1.drag);
 
-			   var node2 = svg2.selectAll(".node")
-			      .data(graph2.nodes)
-			    .enter().append("circle")
-			      .attr("class", "node")
-			      .attr("r", 5)
-			      .style("fill", function(d) { return color(d.group); })
-			      .call(force2.drag);
+				   var node2 = svg2.selectAll(".node")
+				      .data(graph2.nodes)
+				    .enter().append("circle")
+				      .attr("class", "node")
+				      .attr("r", 5)
+				      .style("fill", function(d) { return color(d.group); })
+				      .call(force2.drag);
 
-			  force1.on("tick", function() {
-			    link1.attr("x1", function(d) { return d.source.x; })
-			        .attr("y1", function(d) { return d.source.y; })
-			        .attr("x2", function(d) { return d.target.x; })
-			        .attr("y2", function(d) { return d.target.y; });
+				  force1.on("tick", function() {
+				    link1.attr("x1", function(d) { return d.source.x; })
+				        .attr("y1", function(d) { return d.source.y; })
+				        .attr("x2", function(d) { return d.target.x; })
+				        .attr("y2", function(d) { return d.target.y; });
 
-			    node1.attr("cx", function(d) { return d.x; })
-			        .attr("cy", function(d) { return d.y; });
-			  });
+				    node1.attr("cx", function(d) { return d.x; })
+				        .attr("cy", function(d) { return d.y; });
+				  });
 
-			  force2.on("tick", function() {
-			    link2.attr("x1", function(d) { return d.source.x; })
-			        .attr("y1", function(d) { return d.source.y; })
-			        .attr("x2", function(d) { return d.target.x; })
-			        .attr("y2", function(d) { return d.target.y; });
+				  force2.on("tick", function() {
+				    link2.attr("x1", function(d) { return d.source.x; })
+				        .attr("y1", function(d) { return d.source.y; })
+				        .attr("x2", function(d) { return d.target.x; })
+				        .attr("y2", function(d) { return d.target.y; });
 
-			    node2.attr("cx", function(d) { return d.x; })
-			        .attr("cy", function(d) { return d.y; });
-			  });
-		}, false );
+				    node2.attr("cx", function(d) { return d.x; })
+				        .attr("cy", function(d) { return d.y; });
+				  });
+			}, false );
 
-		
-		Reveal.addEventListener('supply-slide', function() {
-			var chart = new Chartist.Line('.ct-chart', {
-			  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-			  series: [
-			    [1, 5, 2, 5, 4, 3]
-			  ]
-			}, {
-			  low: 0,
-			  showArea: true,
-			  showPoint: true,
-			  fullWidth: true,
-			  height: 300
-			});
+			
+			Reveal.addEventListener('supply-slide', function() {
+				var chart = new Chartist.Line('#supply-chart', {
+				  labels: ['2009-01-03', '2010-04-22', '2011-01-28', '2011-12-14', '2012-11-28', '2013-10-09', '2014-08-11', '2015-07-29', '2016-07-10'],
+				  series: [[
+				    {x: 0, y: 0},
+					{x: 52500, y: 2625000},
+					{x: 105000, y: 5250000},
+					{x: 157500, y: 7875000},
+					{x: 210000, y: 10500000},
+					{x: 262500, y: 11812500},
+					{x: 315000, y: 13125000},
+					{x: 367500, y: 14437500},
+					{x: 420000, y: 15750000}]]
+				}, {
+				  showArea: true,
+				  showPoint: true,
+				  fullWidth: true,
+				  height: 300,
+				  axisX: {
+				  	position: 'end',
+				    labelOffset: {
+					      x: 0,
+					      y: 0
+					    }
+				  },
+				  chartPadding: {
+				    top: 15,
+				    right: 35,
+				    bottom: 5,
+				    left: 30
+				  }
+				});
 
-			// Let's put a sequence number aside so we can use it in the event callbacks
-			var seq = 0,
-			  delays = 80,
-			  durations = 500;
+				// Let's put a sequence number aside so we can use it in the event callbacks
+				var seq = 0,
+				  delays = 50,
+				  durations = 500;
 
-			// Once the chart is fully created we reset the sequence
-			chart.on('created', function() {
-			  seq = 0;
-			});
+				// Once the chart is fully created we reset the sequence
+				chart.on('created', function() {
+				  seq = 0;
+				});
 
-			// On each drawn element by Chartist we use the Chartist.Svg API to trigger SMIL animations
-			chart.on('draw', function(data) {
-			  seq++;
+				// On each drawn element by Chartist we use the Chartist.Svg API to trigger SMIL animations
+				chart.on('draw', function(data) {
+				  seq++;
 
-			  if (data.type === 'area') {
-			    data.element.animate({
-			      d: {
-			        begin: seq * delays + 1500,
-			        dur: durations,
-			        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-			        to: data.path.clone().stringify(),
-			        easing: Chartist.Svg.Easing.easeOutQuint
+				  if (data.type === 'area') {
+				    data.element.animate({
+				      d: {
+				        begin: seq * delays + 1000,
+				        dur: durations,
+				        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+				        to: data.path.clone().stringify(),
+				        easing: Chartist.Svg.Easing.easeOutQuint
+				      }
+				    });
 			      }
-			    });
-		      }
-			  else if(data.type === 'line') {
-			    // If the drawn element is a line we do a simple opacity fade in. This could also be achieved using CSS3 animations.
-			    data.element.animate({
-			      opacity: {
-			        // The delay when we like to start the animation
-			        begin: seq * delays + 500,
-			        // Duration of the animation
-			        dur: durations,
-			        // The value where the animation should start
-			        from: 0,
-			        // The value where it should end
-			        to: 1
+				  else if(data.type === 'line') {
+				    // If the drawn element is a line we do a simple opacity fade in. This could also be achieved using CSS3 animations.
+				    data.element.animate({
+				      opacity: {
+				        // The delay when we like to start the animation
+				        begin: seq * delays + 500,
+				        // Duration of the animation
+				        dur: durations,
+				        // The value where the animation should start
+				        from: 0,
+				        // The value where it should end
+				        to: 1
+				      }
+				    });
+				  } else if(data.type === 'label' && data.axis === 'x') {
+				    data.element.animate({
+				      y: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: data.y + 100,
+				        to: data.y,
+				        // We can specify an easing function from Chartist.Svg.Easing
+				        easing: 'easeOutQuart'
+				      }
+				    });
+				  } else if(data.type === 'label' && data.axis === 'y') {
+				    data.element.animate({
+				      x: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: data.x - 100,
+				        to: data.x,
+				        easing: 'easeOutQuart'
+				      }
+				    });
+				  } else if(data.type === 'point') {
+				    data.element.animate({
+				      x1: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: data.x - 10,
+				        to: data.x,
+				        easing: 'easeOutQuart'
+				      },
+				      x2: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: data.x - 10,
+				        to: data.x,
+				        easing: 'easeOutQuart'
+				      },
+				      opacity: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: 0,
+				        to: 1,
+				        easing: 'easeOutQuart'
+				      }
+				    });
+				  }
+				});
+
+				setTimeout(function() {
+					$('#supply-slide').css('top', '0px');
+				}, 100);
+			}, false);
+
+
+
+
+			/* BIT-INDEX PLOTS */
+			Reveal.addEventListener('bitindex-slide', function() {
+				var chart = new Chartist.Line('#balance', {
+				  labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016'],
+				  series: [[50, 75, 95, 100, 100, 100, 100],
+					 	  [50, null, 100, null, null, null, null]],
+				}, {
+				  showArea: false,
+				  showPoint: false,
+				  fullWidth: true,
+				  height: 300,
+				  width: 450,
+				  axisX: {
+				  	position: 'end',
+				    labelOffset: {
+					      x: 0,
+					      y: 0
+					    }
+				  },
+				  lineSmooth: Chartist.Interpolation.cardinal({
+				    fillHoles: true,
+				  }),
+				  chartPadding: {
+				    top: 15,
+				    right: 30,
+				    bottom: 5,
+				    left: 15
+				  }
+				});
+
+				var chart2 = new Chartist.Line('#volume', {
+				  labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016'],
+				  series: [[100, 37, 13, 5, 1.85, 0.67, 0],
+					 	  [0, null, null, null, 100, null, null]],
+				}, {
+				  showArea: false,
+				  showPoint: false,
+				  fullWidth: true,
+				  height: 300,
+				  width: 450,
+				  axisX: {
+				  	position: 'end',
+				    labelOffset: {
+					      x: 0,
+					      y: 0
+					    }
+				  },
+				  lineSmooth: Chartist.Interpolation.cardinal({
+				    fillHoles: true,
+				  }),
+				  chartPadding: {
+				    top: 15,
+				    right: 30,
+				    bottom: 5,
+				    left: 15
+				  }
+				});
+
+				// Let's put a sequence number aside so we can use it in the event callbacks
+				var seq = 0,
+				  delays = 50,
+				  durations = 500;
+
+				// Once the chart is fully created we reset the sequence
+				chart.on('created', function() {
+				  seq = 0;
+				});
+
+				chart2.on('created', function() {
+				  seq = 0;
+				});
+
+				// On each drawn element by Chartist we use the Chartist.Svg API to trigger SMIL animations
+				chart.on('draw', function(data) {
+				  seq++;
+
+				  if (data.type === 'area') {
+				    data.element.animate({
+				      d: {
+				        begin: seq * delays + 1000,
+				        dur: durations,
+				        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+				        to: data.path.clone().stringify(),
+				        easing: Chartist.Svg.Easing.easeOutQuint
+				      }
+				    });
 			      }
-			    });
-			  } else if(data.type === 'label' && data.axis === 'x') {
-			    data.element.animate({
-			      y: {
-			        begin: seq * delays,
-			        dur: durations,
-			        from: data.y + 100,
-			        to: data.y,
-			        // We can specify an easing function from Chartist.Svg.Easing
-			        easing: 'easeOutQuart'
+				  else if(data.type === 'line') {
+				    // If the drawn element is a line we do a simple opacity fade in. This could also be achieved using CSS3 animations.
+				    data.element.animate({
+				      opacity: {
+				        // The delay when we like to start the animation
+				        begin: seq * delays + 500,
+				        // Duration of the animation
+				        dur: durations,
+				        // The value where the animation should start
+				        from: 0,
+				        // The value where it should end
+				        to: 1
+				      }
+				    });
+				  } else if(data.type === 'label' && data.axis === 'x') {
+				    data.element.animate({
+				      y: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: data.y + 100,
+				        to: data.y,
+				        // We can specify an easing function from Chartist.Svg.Easing
+				        easing: 'easeOutQuart'
+				      }
+				    });
+				  } else if(data.type === 'label' && data.axis === 'y') {
+				    data.element.animate({
+				      x: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: data.x - 100,
+				        to: data.x,
+				        easing: 'easeOutQuart'
+				      }
+				    });
+				  } else if(data.type === 'point') {
+				    data.element.animate({
+				      x1: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: data.x - 10,
+				        to: data.x,
+				        easing: 'easeOutQuart'
+				      },
+				      x2: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: data.x - 10,
+				        to: data.x,
+				        easing: 'easeOutQuart'
+				      },
+				      opacity: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: 0,
+				        to: 1,
+				        easing: 'easeOutQuart'
+				      }
+				    });
+				  }
+				});
+
+				chart2.on('draw', function(data) {
+				  seq++;
+
+				  if (data.type === 'area') {
+				    data.element.animate({
+				      d: {
+				        begin: seq * delays + 1000,
+				        dur: durations,
+				        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+				        to: data.path.clone().stringify(),
+				        easing: Chartist.Svg.Easing.easeOutQuint
+				      }
+				    });
 			      }
-			    });
-			  } else if(data.type === 'label' && data.axis === 'y') {
-			    data.element.animate({
-			      x: {
-			        begin: seq * delays,
-			        dur: durations,
-			        from: data.x - 100,
-			        to: data.x,
-			        easing: 'easeOutQuart'
-			      }
-			    });
-			  } else if(data.type === 'point') {
-			    data.element.animate({
-			      x1: {
-			        begin: seq * delays,
-			        dur: durations,
-			        from: data.x - 10,
-			        to: data.x,
-			        easing: 'easeOutQuart'
-			      },
-			      x2: {
-			        begin: seq * delays,
-			        dur: durations,
-			        from: data.x - 10,
-			        to: data.x,
-			        easing: 'easeOutQuart'
-			      },
-			      opacity: {
-			        begin: seq * delays,
-			        dur: durations,
-			        from: 0,
-			        to: 1,
-			        easing: 'easeOutQuart'
-			      }
-			    });
-			  }
-			  else if(data.type === 'grid') {
-			    // Using data.axis we get x or y which we can use to construct our animation definition objects
-			    var pos1Animation = {
-			      begin: seq * delays,
-			      dur: durations,
-			      from: data[data.axis.units.pos + '1'] - 30,
-			      to: data[data.axis.units.pos + '1'],
-			      easing: 'easeOutQuart'
-			    };
+				  else if(data.type === 'line') {
+				    // If the drawn element is a line we do a simple opacity fade in. This could also be achieved using CSS3 animations.
+				    data.element.animate({
+				      opacity: {
+				        // The delay when we like to start the animation
+				        begin: seq * delays + 500,
+				        // Duration of the animation
+				        dur: durations,
+				        // The value where the animation should start
+				        from: 0,
+				        // The value where it should end
+				        to: 1
+				      }
+				    });
+				  } else if(data.type === 'label' && data.axis === 'x') {
+				    data.element.animate({
+				      y: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: data.y + 100,
+				        to: data.y,
+				        // We can specify an easing function from Chartist.Svg.Easing
+				        easing: 'easeOutQuart'
+				      }
+				    });
+				  } else if(data.type === 'label' && data.axis === 'y') {
+				    data.element.animate({
+				      x: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: data.x - 100,
+				        to: data.x,
+				        easing: 'easeOutQuart'
+				      }
+				    });
+				  } else if(data.type === 'point') {
+				    data.element.animate({
+				      x1: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: data.x - 10,
+				        to: data.x,
+				        easing: 'easeOutQuart'
+				      },
+				      x2: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: data.x - 10,
+				        to: data.x,
+				        easing: 'easeOutQuart'
+				      },
+				      opacity: {
+				        begin: seq * delays,
+				        dur: durations,
+				        from: 0,
+				        to: 1,
+				        easing: 'easeOutQuart'
+				      }
+				    });
+				  }
+				});
 
-			    var pos2Animation = {
-			      begin: seq * delays,
-			      dur: durations,
-			      from: data[data.axis.units.pos + '2'] - 100,
-			      to: data[data.axis.units.pos + '2'],
-			      easing: 'easeOutQuart'
-			    };
-
-			    var animations = {};
-			    animations[data.axis.units.pos + '1'] = pos1Animation;
-			    animations[data.axis.units.pos + '2'] = pos2Animation;
-			    animations['opacity'] = {
-			      begin: seq * delays,
-			      dur: durations,
-			      from: 0,
-			      to: 1,
-			      easing: 'easeOutQuart'
-			    };
-
-			    data.element.animate(animations);
-			  }
-			});
-
-
-			// Create a new line chart object where as first parameter we pass in a selector
-			// that is resolving to our chart container element. The Second parameter
-			// is the actual data object. As a third parameter we pass in our custom options.
-			/*
-			Chart.defaults.global.defaultFontColor = '#fff';
-			Chart.defaults.global.defaultFontSize = 14;
-			Chart.defaults.global.defaultFontFamily = 'Source Sans Pro';
-
-			Chart.defaults.global.title.dsplay = false;
-			var ctx = document.getElementById("bitcoin-supply");
-			var myChart = new Chart(ctx, {
-			    type: 'line',
-			    data: {
-			        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-			        datasets: [{
-			            label: '# of Votes',
-			            data: [12, 19, 3, 5, 2, 3],
-			            backgroundColor: 'rgba(27, 145, 255, 0.80)'
-			        }]
-			    },
-			    options: {
-			        scales: {
-			            yAxes: [{
-			            	gridLines: {
-			        			color: 'rgba(255, 255, 255, 0.25)'
-			        		},
-			                ticks: {
-			                    beginAtZero:true
-			                }
-			            }]
-			        }
-			    }
-			});*/
-
-		}, false);
+				setTimeout(function() {
+					$('#bitindex-slide').css('top', '0px');
+				}, 100);
+			}, false);
+		});
 		</script>
 	</body>
 </html>
